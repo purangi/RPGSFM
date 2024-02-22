@@ -703,6 +703,8 @@ GameObject:
   - component: {fileID: 917802149}
   - component: {fileID: 917802148}
   - component: {fileID: 917802150}
+  - component: {fileID: 917802151}
+  - component: {fileID: 917802152}
   m_Layer: 5
   m_Name: PressAnyKey
   m_TagString: Untagged
@@ -760,8 +762,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292720309
+  m_fontColor: {r: 0.70825917, g: 0.713477, b: 0.8679245, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -842,7 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: f803361217cb3a549873a7b39298d62e,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -853,12 +855,81 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12c55155-87bc-4493-873c-9bc1daeddd00
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 829bc1fd-4166-4c55-ae7a-4254ebdaa4b3
+    m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0cddb054-013a-4b29-91d4-4ed5b3d941a7
+    m_ActionName: Player/Run[/Keyboard/leftShift,/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 56f610b4-9e89-4703-81e7-bbb9c955f3d3
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 117d20c6-6ab4-4a98-962c-ba526578f3d5
+    m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 917802151}
+        m_TargetAssemblyTypeName: PressAnyKey, Assembly-CSharp
+        m_MethodName: OnPressAnyKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 75fcc15f-e3d2-4b52-b69c-9c6cc2fdd67a
+    m_ActionName: PressAnyKey/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 5e9a7a5b-bb81-4cb0-befc-fd1153066fe2
+  m_DefaultActionMap: PressAnyKey
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &917802151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917802146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88758045a34970d4ab2fb815a180bfcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &917802152
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917802146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17cad130620eaed4db58c620cad45b28, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1008203660
 GameObject:
   m_ObjectHideFlags: 0

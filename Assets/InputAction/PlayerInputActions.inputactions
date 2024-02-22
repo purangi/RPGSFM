@@ -180,7 +180,7 @@
             "id": "5e9a7a5b-bb81-4cb0-befc-fd1153066fe2",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "PressAnyKey",
                     "type": "Button",
                     "id": "75fcc15f-e3d2-4b52-b69c-9c6cc2fdd67a",
                     "expectedControlType": "Button",
@@ -193,11 +193,22 @@
                 {
                     "name": "",
                     "id": "7d93f6b7-6d99-4d7a-ad72-766b8c5e3e22",
-                    "path": "",
+                    "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PressAnyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da23d2fb-f8c9-4ea3-ac9f-cbd213382039",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressAnyKey",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -202,7 +202,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""id"": ""5e9a7a5b-bb81-4cb0-befc-fd1153066fe2"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""PressAnyKey"",
                     ""type"": ""Button"",
                     ""id"": ""75fcc15f-e3d2-4b52-b69c-9c6cc2fdd67a"",
                     ""expectedControlType"": ""Button"",
@@ -215,11 +215,22 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7d93f6b7-6d99-4d7a-ad72-766b8c5e3e22"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/anyKey"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""PressAnyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da23d2fb-f8c9-4ea3-ac9f-cbd213382039"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PressAnyKey"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -237,7 +248,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         // PressAnyKey
         m_PressAnyKey = asset.FindActionMap("PressAnyKey", throwIfNotFound: true);
-        m_PressAnyKey_Newaction = m_PressAnyKey.FindAction("New action", throwIfNotFound: true);
+        m_PressAnyKey_PressAnyKey = m_PressAnyKey.FindAction("PressAnyKey", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -377,12 +388,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     // PressAnyKey
     private readonly InputActionMap m_PressAnyKey;
     private List<IPressAnyKeyActions> m_PressAnyKeyActionsCallbackInterfaces = new List<IPressAnyKeyActions>();
-    private readonly InputAction m_PressAnyKey_Newaction;
+    private readonly InputAction m_PressAnyKey_PressAnyKey;
     public struct PressAnyKeyActions
     {
         private @PlayerInputActions m_Wrapper;
         public PressAnyKeyActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_PressAnyKey_Newaction;
+        public InputAction @PressAnyKey => m_Wrapper.m_PressAnyKey_PressAnyKey;
         public InputActionMap Get() { return m_Wrapper.m_PressAnyKey; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -392,16 +403,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PressAnyKeyActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PressAnyKeyActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @PressAnyKey.started += instance.OnPressAnyKey;
+            @PressAnyKey.performed += instance.OnPressAnyKey;
+            @PressAnyKey.canceled += instance.OnPressAnyKey;
         }
 
         private void UnregisterCallbacks(IPressAnyKeyActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @PressAnyKey.started -= instance.OnPressAnyKey;
+            @PressAnyKey.performed -= instance.OnPressAnyKey;
+            @PressAnyKey.canceled -= instance.OnPressAnyKey;
         }
 
         public void RemoveCallbacks(IPressAnyKeyActions instance)
@@ -429,6 +440,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     }
     public interface IPressAnyKeyActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnPressAnyKey(InputAction.CallbackContext context);
     }
 }
